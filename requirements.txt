@@ -1,0 +1,17 @@
+# LARA (Local AI Retrieval Agent) 依賴套件
+# 鎖定 LangChain 0.3.x 穩定版本，避免版本碎片化問題
+
+langchain>=0.3.0,<0.4.0
+langchain-core>=0.3.0,<0.4.0
+langchain-community>=0.3.0,<0.4.0
+langchain-text-splitters>=0.3.0,<0.4.0
+langchain-ollama
+langchain-chroma
+langgraph>=0.2.0,<0.3.0
+
+# UI 與環境管理
+streamlit
+python-dotenv
+
+# 文件處理 (未來擴展用)
+pypdf
