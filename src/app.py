@@ -69,47 +69,32 @@ if prompt := st.chat_input("請輸入您的問題..."):
                     response += chunk
                     response_placeholder.markdown(response + "▌")
                 response_placeholder.markdown(response)
-
             else:
-
                 # Agent 模式 (LangGraph)
-
                 agent_executor = create_agent(vectorstore)
 
                 if debug_mode:
                     st.markdown("### 🤖 Agent 思考與工具呼叫日誌 (LangGraph)")
 
                 # LangGraph 的標準輸入格式
-
                 input_dict = {"messages": [{"role": "user", "content": prompt}]}
 
                 # 執行 Agent
-
                 result = agent_executor.invoke(input_dict)
 
                 # 提取最後一個訊息作為最終回答
-
                 response = result["messages"][-1].content
 
                 if debug_mode:
-
                     st.markdown("#### 執行軌跡 (Execution Trace):")
-
                     # LangGraph 會返回所有中間訊息，我們可以過濾出 Tool 呼叫
-
                     for msg in result["messages"]:
-
                         if hasattr(msg, 'tool_calls') and msg.tool_calls:
-
                             for tc in msg.tool_calls:
                                 st.markdown(f"- 🔧 **呼叫工具**: `{tc['name']}`")
-
                                 st.markdown(f"  - **參數**: `{tc['args']}`")
-
                         elif hasattr(msg, 'tool_call_id'):
-
                             st.markdown(f"- 👁️ **觀察結果**: {str(msg.content)[:200]}...")
-
                     st.markdown("---")
 
                 st.markdown(response)
