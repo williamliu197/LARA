@@ -14,7 +14,7 @@ from src.vector_store import build_vector_store
 from src.rag_pipeline import create_rag_chain
 from src.agent_workflow import create_agent
 
-st.set_page_config(page_title="Local AI RAG & Agent", layout="wide")
+st.set_page_config(page_title="Local AI Retrieval Agent", layout="wide")
 st.title("🦙 本地化 AI 知識問答與 Agent 系統 (Ollama)")
 
 with st.sidebar:
