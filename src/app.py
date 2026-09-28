@@ -15,7 +15,10 @@ from src.rag_pipeline import create_rag_chain
 from src.agent_workflow import create_agent
 
 st.set_page_config(page_title="Local AI Retrieval Agent", layout="wide")
-st.title("🦙 本地化 AI 知識問答與 Agent 系統 (Ollama)")
+st.markdown(
+    "<h1 style='text-align: center;'>Local AI Retrieval Agent</h1>",
+    unsafe_allow_html=True
+)
 
 with st.sidebar:
     st.header("⚙️ 系統設定")
@@ -69,7 +72,6 @@ if prompt := st.chat_input("請輸入您的問題..."):
                     response += chunk
                     response_placeholder.markdown(response + "▌")
                 response_placeholder.markdown(response)
-
 
             else:
 
