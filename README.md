@@ -13,4 +13,6 @@ pip install -r requirements.txt
 ```
 
 ## 啟動
+```bash
 streamlit run src/app.py
+```
