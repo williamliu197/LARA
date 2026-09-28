@@ -15,10 +15,7 @@ from src.rag_pipeline import create_rag_chain
 from src.agent_workflow import create_agent
 
 st.set_page_config(page_title="Local AI Retrieval Agent", layout="wide")
-st.markdown(
-    "<h1 style='text-align: center;'>Local AI Retrieval Agent</h1>",
-    unsafe_allow_html=True
-)
+st.title("Local AI Retrieval Agent")
 
 with st.sidebar:
     st.header("⚙️ 系統設定")
