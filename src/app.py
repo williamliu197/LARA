@@ -31,7 +31,7 @@ def init_system():
     if not os.path.exists(sample_file):
         with open(sample_file, "w", encoding="utf-8") as f:
             f.write(
-                "本公司於 2024 年推出新一代 AI 平台。\n核心功能包含 RAG 知識庫建置與 Agent 自動化工作流。\n若遇到回答不準確，應從資料品質、Chunk 切分、Retrieval 策略逐層排查，而非僅修改 Prompt。\n產品 A 的原價是 1000 元。")
+                "本公司於 2024 年推出新一代 AI 平台。\n核心功能包含 RAG 知識庫建置與 Agent 自動化工作流。\n若遇到回答不準確，應從資料品質、Chunk 切分、Retrieval 策略逐層排查，而非僅修改 Prompt。")
     return build_vector_store(sample_file)
 
 
