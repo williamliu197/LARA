@@ -1,8 +1,8 @@
 ## 安裝 Ollama 並拉取模型
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
-ollama pull qwen2.5:7b
 ollama pull nomic-embed-text
+ollama pull qwen2.5:7b
 ```
 
 ## 安裝 Python 依賴
